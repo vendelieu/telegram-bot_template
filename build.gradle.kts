@@ -14,5 +14,5 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:2.1.0")
+    implementation("eu.vendeli:telegram-bot:2.2.0")
 }
