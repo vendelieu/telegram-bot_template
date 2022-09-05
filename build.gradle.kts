@@ -16,7 +16,6 @@ repositories {
 dependencies {
     implementation("eu.vendeli:telegram-bot:2.1.0")
 
-    implementation("ch.qos.logback:logback-classic:1.2.11")
     implementation(group = "org.redisson", name = "redisson", version = "3.17.0") {
         exclude("com.fasterxml.jackson.core", "jackson-databind")
     }
