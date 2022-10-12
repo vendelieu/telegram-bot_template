@@ -1,8 +1,7 @@
-package eu.vendeli.samples
+package eu.vendelieu.samples.heroku
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.api.botactions.setWebhook
-import eu.vendeli.tgbot.types.Update
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
@@ -12,13 +11,13 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 suspend fun main() {
-    val bot = TelegramBot("BOT_TOKEN", "eu.vendeli.samples.controller")
+    val bot = TelegramBot(System.getenv("TOKEN"), "eu.vendelieu.samples.heroku.controller")
 
-    setWebhook("https://0.0.0.0/BOT_TOKEN").send(bot)
+    setWebhook(System.getenv("HOST") + "/" + System.getenv("TOKEN")).send(bot)
 
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+    embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         routing {
-            post("/BOT_TOKEN") {
+            post("/" + System.getenv("TOKEN")) {
                 bot.update.apply {
                     parseUpdate(call.receive())?.handle()
                 }

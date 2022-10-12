@@ -1,1 +1,1 @@
-rootProject.name = "ktor-webhook"
+rootProject.name = "heroku-bot"
