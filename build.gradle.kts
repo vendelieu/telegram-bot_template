@@ -3,10 +3,10 @@ plugins {
     kotlin("jvm") version "1.7.20"
 }
 
-group = "eu.vendeli.samples"
+group = "com.example.poll"
 version = "0.0.1"
 application {
-    mainClass.set("eu.vendeli.samples.PollApplicationKt")
+    mainClass.set("com.example.poll.PollApplicationKt")
 }
 
 repositories {
@@ -14,5 +14,5 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:2.2.2")
+    implementation("eu.vendeli:telegram-bot:2.3.2")
 }

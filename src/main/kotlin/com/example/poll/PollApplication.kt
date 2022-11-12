@@ -1,10 +1,9 @@
-package eu.vendeli.samples
+package com.example.poll
 
 import eu.vendeli.tgbot.TelegramBot
-import eu.vendeli.tgbot.api.message
 
 suspend fun main() {
-    val bot = TelegramBot("BOT_TOKEN", "eu.vendeli.samples.controller")
+    val bot = TelegramBot("BOT_TOKEN", "com.example.poll.controller")
 
     bot.update.setListener {
         handle(it)
