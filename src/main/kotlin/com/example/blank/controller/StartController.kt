@@ -1,4 +1,4 @@
-package eu.vendeli.samples.controller
+package com.example.blank.controller
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.annotations.CommandHandler
