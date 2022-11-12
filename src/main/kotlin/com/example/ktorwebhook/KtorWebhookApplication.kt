@@ -1,8 +1,7 @@
-package eu.vendeli.samples
+package com.example.ktorwebhook
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.api.botactions.setWebhook
-import eu.vendeli.tgbot.types.Update
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
@@ -12,7 +11,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 suspend fun main() {
-    val bot = TelegramBot("BOT_TOKEN", "eu.vendeli.samples.controller")
+    val bot = TelegramBot("BOT_TOKEN", "com.example.ktorwebhook.controller")
 
     setWebhook("https://0.0.0.0/BOT_TOKEN").send(bot)
 
