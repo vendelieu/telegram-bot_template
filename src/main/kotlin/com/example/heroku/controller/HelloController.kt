@@ -1,4 +1,4 @@
-package eu.vendelieu.samples.heroku.controller
+package com.example.heroku.controller
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.annotations.CommandHandler
