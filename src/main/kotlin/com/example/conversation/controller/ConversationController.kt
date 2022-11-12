@@ -1,14 +1,14 @@
-package eu.vendeli.samples.controller
+package com.example.conversation.controller
 
 import eu.vendeli.tgbot.TelegramBot
-import eu.vendeli.tgbot.annotations.TelegramCommand
-import eu.vendeli.tgbot.annotations.TelegramInput
+import eu.vendeli.tgbot.annotations.CommandHandler
+import eu.vendeli.tgbot.annotations.InputHandler
 import eu.vendeli.tgbot.api.message
 import eu.vendeli.tgbot.types.User
 import eu.vendeli.tgbot.types.internal.ProcessedUpdate
 import eu.vendeli.tgbot.types.internal.UpdateType
 
-class ConversationTelegramController {
+class ConversationController {
     @CommandHandler(["/start"])
     suspend fun start(user: User, bot: TelegramBot) {
         message { "Hello, my name is Adam, and you?" }.send(user, bot)

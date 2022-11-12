@@ -1,7 +1,10 @@
-package eu.vendeli.samples
+package com.example.conversation
 
-import com.github.benmanes.caffeine.cache.Caffeine
 import eu.vendeli.tgbot.interfaces.BotUserData
+import kotlinx.coroutines.*
+import kotlinx.coroutines.future.asDeferred
+import org.redisson.api.LocalCachedMapOptions
+import org.redisson.api.RedissonClient
 
 class BotUserDataImpl(redis: RedissonClient) : BotUserData {
     private val cache = redis.getLocalCachedMap<String, String>(
