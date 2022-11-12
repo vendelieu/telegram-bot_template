@@ -1,6 +1,6 @@
-package eu.vendeli.springbot.configuration
+package com.example.springbot.configuration
 
-import eu.vendeli.springbot.implementation.SpringClassManager
+import com.example.springbot.implementation.SpringClassManager
 import eu.vendeli.tgbot.TelegramBot
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
@@ -15,7 +15,7 @@ class SpringTelegramBot(
     @Bean
     fun instance() = TelegramBot(
         botToken,
-        "eu.vendeli.springbot.botController",
+        "com.example.springbot.botController",
         classManager = springClassManager
     ).apply {
         // .. configure context, like userData etc

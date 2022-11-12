@@ -9,7 +9,7 @@ plugins {
     kotlin("plugin.spring") version "1.7.20"
 }
 
-group = "eu.vendeli.spring-bot"
+group = "com.example.springbot"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = javaTarget
 
@@ -21,7 +21,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-    implementation("eu.vendeli:telegram-bot:2.2.2")
+    implementation("eu.vendeli:telegram-bot:2.3.2")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

@@ -1,4 +1,4 @@
-package eu.vendeli.springbot.controller
+package com.example.springbot.controller
 
 import eu.vendeli.tgbot.TelegramBot
 import org.springframework.web.bind.annotation.PostMapping

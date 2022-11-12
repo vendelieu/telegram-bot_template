@@ -1,4 +1,4 @@
-package eu.vendeli.springbot.botController
+package com.example.springbot.botController
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.annotations.CommandHandler

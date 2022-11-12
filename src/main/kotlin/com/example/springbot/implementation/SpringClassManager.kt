@@ -1,4 +1,4 @@
-package eu.vendeli.springbot.implementation
+package com.example.springbot.implementation
 
 import eu.vendeli.tgbot.interfaces.ClassManager
 import org.springframework.context.ApplicationContext
