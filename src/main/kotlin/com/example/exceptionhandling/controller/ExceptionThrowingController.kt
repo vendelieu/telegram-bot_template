@@ -1,6 +1,6 @@
-package eu.vendeli.samples.controller
+package com.example.exceptionhandling.controller
 
-import eu.vendeli.tgbot.annotations.TelegramCommand
+import eu.vendeli.tgbot.annotations.CommandHandler
 
 class ExceptionThrowingController {
     @CommandHandler(["/start"])

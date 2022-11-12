@@ -1,4 +1,4 @@
-package eu.vendeli.samples
+package com.example.exceptionhandling
 
 import eu.vendeli.tgbot.types.Update
 import org.slf4j.LoggerFactory
