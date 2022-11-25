@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:2.4.1")
+    implementation("eu.vendeli:telegram-bot:2.4.2")
 
     implementation(group = "org.redisson", name = "redisson", version = "3.17.0") {
         exclude("com.fasterxml.jackson.core", "jackson-databind")
