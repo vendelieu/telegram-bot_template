@@ -11,7 +11,7 @@ start working with it.
 You can select the master branch where the minimum example project is located, or you can use a suitable one in the
 corresponding branch and start using it.
 
-To clone master branch use this command:
+To clone only master branch use this command:
 
 ```
 git clone -b master --single-branch https://github.com/vendelieu/telegram-bot_template.git
