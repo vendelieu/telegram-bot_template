@@ -11,8 +11,6 @@ class BotController(
 ) {
     @PostMapping("/webhook")
     suspend fun webhook(@RequestBody update: String) {
-        telegramBot.update.apply {
-            parseUpdate(update)?.handle()
-        }
+        telegramBot.update.parseAndHandle(update)
     }
 }
