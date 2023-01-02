@@ -1,12 +1,9 @@
 val ktor_version: String by project
-val koin_version: String by project
-val kotlin_version: String by project
-val logback_version: String by project
 val tgbot_version: String by project
 
 plugins {
     application
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm") version "1.8.0"
 }
 
 group = "com.example.heroku"
@@ -17,7 +14,7 @@ application {
     mainClass.set("com.example.heroku.HerokuAppKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
-    applicationDefaultJvmArgs = listOf("-XX:+UseZGC", "-Dio.ktor.development=$isDevelopment")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
 repositories {

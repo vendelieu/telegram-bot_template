@@ -2,15 +2,17 @@ package com.example.heroku
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.api.botactions.setWebhook
-import io.ktor.http.*
-import io.ktor.server.application.*
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
-import io.ktor.server.request.*
-import io.ktor.server.response.*
-import io.ktor.server.routing.*
+import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.call
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import io.ktor.server.request.receiveText
+import io.ktor.server.response.respond
+import io.ktor.server.routing.post
+import io.ktor.server.routing.routing
+import kotlinx.coroutines.runBlocking
 
-suspend fun main() {
+fun main(): Unit = runBlocking {
     val bot = TelegramBot(System.getenv("TOKEN"), "com.example.heroku.controller")
 
     setWebhook(System.getenv("HOST") + "/" + System.getenv("TOKEN")).send(bot)
@@ -18,9 +20,7 @@ suspend fun main() {
     embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         routing {
             post("/" + System.getenv("TOKEN")) {
-                bot.update.apply {
-                    parseUpdate(call.receive())?.handle()
-                }
+                bot.update.parseAndHandle(call.receiveText())
                 call.respond(HttpStatusCode.OK)
             }
         }
