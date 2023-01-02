@@ -6,7 +6,7 @@ import eu.vendeli.tgbot.api.message
 import eu.vendeli.tgbot.api.poll
 import eu.vendeli.tgbot.types.PollType
 import eu.vendeli.tgbot.types.User
-import eu.vendeli.tgbot.utils.inlineKeyboardMarkup
+import eu.vendeli.tgbot.utils.builders.inlineKeyboardMarkup
 
 class PollController {
     @CommandHandler(["/start"])
