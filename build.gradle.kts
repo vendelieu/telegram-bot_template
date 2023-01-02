@@ -1,11 +1,10 @@
 val ktor_version: String by project
-val kotlin_version: String by project
 val logback_version: String by project
 val tgbot_version: String by project
 
 plugins {
     application
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm") version "1.8.0"
 }
 
 group = "com.example.ktorwebhook"
