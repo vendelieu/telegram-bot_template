@@ -1,8 +1,12 @@
 package com.example.conversation
 
 import eu.vendeli.tgbot.interfaces.BotUserData
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.future.asDeferred
+import kotlinx.coroutines.withContext
 import org.redisson.api.LocalCachedMapOptions
 import org.redisson.api.RedissonClient
 
@@ -23,10 +27,10 @@ class BotUserDataImpl(redis: RedissonClient) : BotUserData {
         }
     }
 
-    override fun get(telegramId: Long, key: String): Any? = cache["${telegramId}_$key"]
+    override fun <T> get(telegramId: Long, key: String): T? = cache["${telegramId}_$key"] as? T
 
-    override suspend fun getAsync(telegramId: Long, key: String): Deferred<Any?> =
-        cache.getAsync("${telegramId}_$key").asDeferred()
+    override suspend fun <T> getAsync(telegramId: Long, key: String): Deferred<T?> =
+        cache.getAsync("${telegramId}_$key").asDeferred() as Deferred<T?>
 
     override fun set(telegramId: Long, key: String, value: Any?) {
         cache.fastPutAsync("${telegramId}_$key", value.toString())

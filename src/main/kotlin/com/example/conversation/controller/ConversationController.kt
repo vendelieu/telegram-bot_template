@@ -23,7 +23,7 @@ class ConversationController {
             bot.inputListener.set(update.user.id, "name")
         }
 
-        bot.userData?.set(update.user.id, "name", update.text)
+        bot.userData.set(update.user.id, "name", update.text)
 
         message { "Oh, ${update.text}, nice to meet you!" }
         message { "How old are you?" }.send(update.user, bot)
@@ -39,7 +39,7 @@ class ConversationController {
             bot.inputListener.set(update.user.id, "age")
         }
 
-        val name = bot.userData?.get(update.user.id, "name").toString()
+        val name = bot.userData.get<String>(update.user.id, "name")
         message {
             "I'm not good at remembering, but I remembered you! You're $name and you're ${update.text} years old."
         }.send(update.user, bot)

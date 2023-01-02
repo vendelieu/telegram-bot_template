@@ -1,6 +1,6 @@
 plugins {
     application
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm") version "1.8.0"
 }
 
 group = "com.example.conversation"
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:2.4.2")
+    implementation("eu.vendeli:telegram-bot:2.5.1")
 
     implementation(group = "org.redisson", name = "redisson", version = "3.17.0") {
         exclude("com.fasterxml.jackson.core", "jackson-databind")
