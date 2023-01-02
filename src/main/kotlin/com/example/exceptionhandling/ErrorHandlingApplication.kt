@@ -1,12 +1,18 @@
 package com.example.exceptionhandling
 
 import eu.vendeli.tgbot.TelegramBot
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.consumeEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
-suspend fun main() {
+fun main() = runBlocking {
     val bot = TelegramBot("BOT_TOKEN", "com.example.exceptionhandling.controller")
 
-    bot.update.setListener {
-        handle(it)?.also { ex -> ExceptionHandler.handleException(it, ex) }
-        // Handling method returns an exception if there was one.
+    launch(Dispatchers.Unconfined) {
+        bot.update.caughtExceptions.consumeEach {
+            ExceptionHandler.handleException(it.second, it.first)
+        }
     }
+    bot.handleUpdates()
 }
