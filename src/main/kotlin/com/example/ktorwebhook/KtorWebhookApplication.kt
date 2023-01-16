@@ -16,6 +16,10 @@ suspend fun main() {
 
     setWebhook("https://0.0.0.0/BOT_TOKEN").send(bot)
 
+    bot.update.setBehaviour {
+        handle(it)
+    }
+
     embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
         routing {
             post("/BOT_TOKEN") {
