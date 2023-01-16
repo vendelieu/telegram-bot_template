@@ -17,6 +17,10 @@ fun main(): Unit = runBlocking {
 
     setWebhook(System.getenv("HOST") + "/" + System.getenv("TOKEN")).send(bot)
 
+    bot.update.setBehaviour {
+        handle(it)
+    }
+
     embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         routing {
             post("/" + System.getenv("TOKEN")) {
