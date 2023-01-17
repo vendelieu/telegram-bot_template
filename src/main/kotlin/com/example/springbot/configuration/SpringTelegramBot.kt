@@ -13,8 +13,17 @@ class SpringTelegramBot(
     private val springClassManager: SpringClassManager
 ) {
     @Bean
-    fun instance() = TelegramBot(botToken, "com.example.springbot.botController") {
-        classManager = springClassManager
-        // .. configure context, like userData etc
+    fun instance(): TelegramBot {
+        val bot = TelegramBot(botToken, "com.example.springbot.botController") {
+            classManager = springClassManager
+            // .. configure context, like userData etc
+        }
+
+        // configure handling behaviour for webhook handling
+        bot.update.setBehaviour {
+            handle(it)
+        }
+
+        return bot
     }
 }
