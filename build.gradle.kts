@@ -28,3 +28,12 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
 }
+
+tasks {
+    compileJava {
+        targetCompatibility = "11"
+    }
+    compileKotlin {
+        kotlinOptions.jvmTarget = "11"
+    }
+}
