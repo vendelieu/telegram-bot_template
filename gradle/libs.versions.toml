@@ -1,0 +1,11 @@
+[versions]
+tg-bot = "2.7.2"
+ktor = "2.2.4"
+
+kotlin = "1.8.10"
+
+[libraries]
+tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

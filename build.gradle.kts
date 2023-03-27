@@ -1,14 +1,15 @@
-val ktor_version: String by project
-val tgbot_version: String by project
+val ktor_version = libs.versions.ktor.get()
+val jvmTargetVersion = JavaVersion.VERSION_17
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     application
-    kotlin("jvm") version "1.8.0"
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "com.example.heroku"
 version = "0.0.1"
-java.targetCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = jvmTargetVersion
 
 application {
     mainClass.set("com.example.heroku.HerokuAppKt")
@@ -22,10 +23,19 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:$tgbot_version")
+    implementation(libs.tg.bot)
 
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
+}
+
+tasks {
+    compileJava {
+        targetCompatibility = jvmTargetVersion.majorVersion
+    }
+    compileKotlin {
+        kotlinOptions.jvmTarget = jvmTargetVersion.majorVersion
+    }
 }
 
 tasks.create("stage").dependsOn("installDist")
