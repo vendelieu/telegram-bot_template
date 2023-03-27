@@ -19,8 +19,11 @@ class ConversationController {
     @InputHandler(["name"])
     suspend fun name(update: ProcessedUpdate, bot: TelegramBot, user: User) {
         if (update !is MessageUpdate) {
-            message { "Please say your name, because that's what well-mannered people do :)" }.send(user, bot)
+            message {
+                "Please say your name, because that's what well-mannered people do :)"
+            }.send(user, bot)
             bot.inputListener.set(user.id, "name")
+            return
         }
 
         bot.userData.set(user.id, "name", update.text)
@@ -34,14 +37,18 @@ class ConversationController {
     @InputHandler(["age"])
     suspend fun age(update: ProcessedUpdate, bot: TelegramBot, user: User) {
         if (update !is MessageUpdate || update.text.toIntOrNull() == null) {
-            message { "Perhaps it's not nice to ask your age, but maybe you can tell me anyway." }
-                .send(user, bot)
+            message {
+                "Perhaps it's not nice to ask your age, but maybe you can tell me anyway."
+            }.send(user, bot)
+
             bot.inputListener.set(user.id, "age")
+            return
         }
 
         val name = bot.userData.get<String>(user.id, "name")
         message {
-            "I'm not good at remembering, but I remembered you! You're $name and you're ${update.text} years old."
+            "I'm not good at remembering, but I remembered you! " +
+                "You're $name and you're ${update.text} years old."
         }.send(user, bot)
     }
 }
