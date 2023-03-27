@@ -1,6 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     application
-    kotlin("jvm") version "1.8.0"
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "com.example.blank"
@@ -14,5 +15,5 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:2.6.0")
+    implementation(libs.tg.bot)
 }
