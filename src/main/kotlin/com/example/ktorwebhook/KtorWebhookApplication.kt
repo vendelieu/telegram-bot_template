@@ -11,18 +11,19 @@ import io.ktor.server.response.respond
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
 
+const val HOST = "example.com" // change host to yours
+const val TOKEN = "BOT_TOKEN" // put token there
+
 suspend fun main() {
-    val bot = TelegramBot("BOT_TOKEN", "com.example.ktorwebhook.controller")
+    val bot = TelegramBot(TOKEN, "com.example.ktorwebhook.controller")
 
-    setWebhook("https://0.0.0.0/BOT_TOKEN").send(bot)
+    setWebhook("https://$HOST/$TOKEN").send(bot)
 
-    bot.update.setBehaviour {
-        handle(it)
-    }
+    bot.update.setBehaviour { handle(it) }
 
     embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
         routing {
-            post("/BOT_TOKEN") {
+            post("/$TOKEN") {
                 bot.update.parseAndHandle(call.receiveText())
                 call.respond(HttpStatusCode.OK)
             }

@@ -1,10 +1,10 @@
-val ktor_version: String by project
-val logback_version: String by project
-val tgbot_version: String by project
+val jvmTargetVersion = JavaVersion.VERSION_11
+val ktorVer = libs.versions.ktor.get()
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     application
-    kotlin("jvm") version "1.8.0"
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "com.example.ktorwebhook"
@@ -21,19 +21,20 @@ repositories {
 }
 
 dependencies {
-    implementation("eu.vendeli:telegram-bot:$tgbot_version")
+    implementation(libs.tg.bot)
+    implementation(libs.logback)
 
-    implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
-    implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-    testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-core-jvm:$ktorVer")
+    implementation("io.ktor:ktor-server-netty-jvm:$ktorVer")
+
+    testImplementation("io.ktor:ktor-server-tests-jvm:$ktorVer")
 }
 
 tasks {
     compileJava {
-        targetCompatibility = "11"
+        targetCompatibility = jvmTargetVersion.majorVersion
     }
     compileKotlin {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = jvmTargetVersion.majorVersion
     }
 }
