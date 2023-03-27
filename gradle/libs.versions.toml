@@ -1,7 +1,7 @@
 [versions]
 tg-bot = "2.7.2"
 spring-boot = "3.0.5"
-spring-dependency-management = "1.0.14.RELEASE"
+spring-dependency-management = "1.1.0"
 
 kotlin = "1.8.10"
 
