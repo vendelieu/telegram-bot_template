@@ -1,0 +1,16 @@
+[versions]
+tg-bot = "2.7.2"
+redisson = "3.20.0"
+jackson = "2.14.2"
+ktx-coroutines-jdk8 = "1.6.4"
+
+kotlin = "1.8.10"
+
+[libraries]
+tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
+redisson = { module = "org.redisson:redisson", version.ref = "redisson" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+ktx-coroutines-jdk8 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8", version.ref = "ktx-coroutines-jdk8" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
