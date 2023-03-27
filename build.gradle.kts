@@ -2,11 +2,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val javaTarget = JavaVersion.VERSION_11
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("org.springframework.boot") version "2.7.4"
-    id("io.spring.dependency-management") version "1.0.14.RELEASE"
-    kotlin("jvm") version "1.8.0"
-    kotlin("plugin.spring") version "1.8.0"
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.spring)
 }
 
 group = "com.example.springbot"
@@ -21,20 +22,25 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-    implementation("eu.vendeli:telegram-bot:2.6.0")
+    implementation(libs.tg.bot)
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
+tasks {
+    compileJava {
+        targetCompatibility = javaTarget.majorVersion
+    }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = javaTarget.toString()
+    withType<Test> {
+        useJUnitPlatform()
+    }
+    withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = javaTarget.majorVersion
+        }
     }
 }

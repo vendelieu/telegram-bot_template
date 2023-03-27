@@ -1,0 +1,16 @@
+[versions]
+tg-bot = "2.7.2"
+spring-boot = "2.7.4"
+spring-dependency-management = "1.0.14.RELEASE"
+
+kotlin = "1.8.10"
+
+[libraries]
+tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+
