@@ -16,7 +16,7 @@ class PollController {
         poll("Zebra white with black stripes or black with white stripes") {
             arrayOf(
                 "white with black stripes",
-                "black with with white stripes"
+                "black with with white stripes",
             )
         }.options {
             type = PollType.Quiz
