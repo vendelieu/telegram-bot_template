@@ -4,7 +4,7 @@ redisson = "3.20.1"
 jackson = "2.14.2"
 ktx-coroutines-jdk8 = "1.6.4"
 
-kotlin = "1.8.10"
+kotlin = "1.8.20"
 
 [libraries]
 tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
