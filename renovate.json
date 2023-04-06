@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    ":disableDependencyDashboard"
   ],
   "baseBranches": [
     "master",
@@ -12,5 +13,7 @@
     "heroku",
     "ktor-webhook",
     "spring-bot"
-  ]
+  ],
+  "automerge": true,
+  "automergeType": "branch"
 }
