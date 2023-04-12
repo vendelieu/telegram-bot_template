@@ -3,16 +3,6 @@ name: build
 on:
   merge_group:
   push:
-    branches:
-      - master
-      - conversation
-      - echo
-      - exception-handling
-      - poll
-      - heroku
-      - ktor-webhook
-      - spring-bot
-      - 'renovate/**'
   pull_request:
 
 jobs:
