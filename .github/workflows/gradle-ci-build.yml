@@ -3,14 +3,7 @@ name: build
 on:
   push:
     branches:
-      - master
-      - conversation
-      - echo
-      - exception-handling
-      - poll
-      - heroku
-      - ktor-webhook
-      - spring-bot
+      - '**'
   pull_request:
 
 jobs:
