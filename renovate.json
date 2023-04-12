@@ -13,6 +13,7 @@
     "ktor-webhook",
     "spring-bot"
   ],
-  "automerge": true,
-  "automergeType": "branch"
+    "automerge": true,
+    "automergeType": "pr",
+    "platformAutomerge": true
 }
