@@ -1,5 +1,5 @@
 [versions]
-tg-bot = "2.7.3"
+tg-bot = "2.7.4"
 redisson = "3.20.1"
 jackson = "2.14.2"
 ktx-coroutines-jdk8 = "1.6.4"
