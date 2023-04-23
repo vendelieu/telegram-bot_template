@@ -18,12 +18,6 @@ repositories {
 
 dependencies {
     implementation(libs.tg.bot)
-
-    implementation(libs.redisson) {
-        exclude("com.fasterxml.jackson.core", "jackson-databind")
-    }
-    implementation(libs.jackson.databind)
-    implementation(libs.ktx.coroutines.jdk8)
 }
 
 tasks {
