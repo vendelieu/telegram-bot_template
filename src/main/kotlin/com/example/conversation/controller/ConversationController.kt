@@ -13,7 +13,7 @@ class ConversationController {
     suspend fun start(user: User, bot: TelegramBot) {
         message { "Hello, my name is Adam, and you?" }.send(user, bot)
 
-        bot.inputListener.set(user.id, "name")
+        bot.inputListener[user] = "name"
     }
 
     @InputHandler(["name"])
@@ -22,16 +22,16 @@ class ConversationController {
             message {
                 "Please say your name, because that's what well-mannered people do :)"
             }.send(user, bot)
-            bot.inputListener.set(user.id, "name")
+            bot.inputListener[user] = "name"
             return
         }
 
-        bot.userData.set(user.id, "name", update.text)
+        bot.userData[user, "name"] = update.text
 
         message { "Oh, ${update.text}, nice to meet you!" }
         message { "How old are you?" }.send(user, bot)
 
-        bot.inputListener.set(user.id, "age")
+        bot.inputListener[user] = "age"
     }
 
     @InputHandler(["age"])
@@ -41,11 +41,11 @@ class ConversationController {
                 "Perhaps it's not nice to ask your age, but maybe you can tell me anyway."
             }.send(user, bot)
 
-            bot.inputListener.set(user.id, "age")
+            bot.inputListener[user] = "age"
             return
         }
 
-        val name = bot.userData.get<String>(user.id, "name")
+        val name = bot.userData[user, "name"]
         message {
             "I'm not good at remembering, but I remembered you! " +
                 "You're $name and you're ${update.text} years old."
