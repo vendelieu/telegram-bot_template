@@ -1,6 +1,5 @@
 val jvmTargetVersion = JavaVersion.VERSION_11
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
