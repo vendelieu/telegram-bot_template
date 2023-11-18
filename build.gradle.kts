@@ -1,7 +1,6 @@
 val jvmTargetVersion = JavaVersion.VERSION_11
 val ktorVer = libs.versions.ktor.get()
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
@@ -35,6 +34,9 @@ tasks {
         targetCompatibility = jvmTargetVersion.majorVersion
     }
     compileKotlin {
-        kotlinOptions.jvmTarget = jvmTargetVersion.majorVersion
+        kotlinOptions {
+            jvmTarget = jvmTargetVersion.majorVersion
+            javaParameters = true
+        }
     }
 }
