@@ -25,6 +25,9 @@ tasks {
         targetCompatibility = jvmTargetVersion.majorVersion
     }
     compileKotlin {
-        kotlinOptions.jvmTarget = jvmTargetVersion.majorVersion
+        kotlinOptions {
+            jvmTarget = jvmTargetVersion.majorVersion
+            javaParameters = true
+        }
     }
 }
