@@ -1,5 +1,5 @@
 [versions]
-tg-bot = "3.3.1"
+tg-bot = "3.4.0"
 ktor = "2.2.4"
 
 kotlin = "1.9.21"
