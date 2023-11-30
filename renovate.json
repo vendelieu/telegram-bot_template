@@ -13,5 +13,18 @@
     "ktor-webhook",
     "spring-bot"
   ],
-  "automergeType": "branch"
+  "automergeType": "branch",
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    }
+  ]
 }
