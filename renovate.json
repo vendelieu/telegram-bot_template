@@ -3,7 +3,6 @@
     "config:base",
     ":automergeMinor"
   ],
-  "prCreation": "immediate",
   "baseBranches": [
     "master",
     "conversation",
