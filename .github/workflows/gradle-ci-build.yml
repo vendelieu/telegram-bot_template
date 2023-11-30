@@ -1,9 +1,18 @@
 name: build
 
 on:
-  merge_group:
   push:
+    branches: [ master ]
   pull_request:
+    branches: [ master,
+                conversation,
+                echo,
+                exception-handling,
+                poll,
+                heroku,
+                ktor-webhook,
+                spring-bot ]
+  workflow_dispatch:
 
 jobs:
   build:
