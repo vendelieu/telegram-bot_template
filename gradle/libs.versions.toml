@@ -1,7 +1,7 @@
 [versions]
 tg-bot = "3.4.0"
 ktor = "2.2.4"
-logback = "1.4.13"
+logback = "1.4.14"
 
 kotlin = "1.9.21"
 
