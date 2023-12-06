@@ -18,7 +18,7 @@ class ConversationController {
 
     @InputHandler(["name"])
     suspend fun name(update: ProcessedUpdate, bot: TelegramBot, user: User) {
-        if (update !is MessageUpdate) {
+        if (update.text.isBlank()) {
             message {
                 "Please say your name, because that's what well-mannered people do :)"
             }.send(user, bot)
@@ -36,7 +36,7 @@ class ConversationController {
 
     @InputHandler(["age"])
     suspend fun age(update: ProcessedUpdate, bot: TelegramBot, user: User) {
-        if (update !is MessageUpdate || update.text.toIntOrNull() == null) {
+        if (update.text.toIntOrNull() == null) {
             message {
                 "Perhaps it's not nice to ask your age, but maybe you can tell me anyway."
             }.send(user, bot)
