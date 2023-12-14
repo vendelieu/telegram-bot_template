@@ -1,5 +1,5 @@
 [versions]
-tg-bot = "3.4.0"
+tg-bot = "3.5.0"
 ktor = "2.2.4"
 logback = "1.4.14"
 
