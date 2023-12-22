@@ -2,7 +2,7 @@
 tg-bot = "3.5.0"
 ktor = "2.2.4"
 
-kotlin = "1.9.21"
+kotlin = "1.9.22"
 
 [libraries]
 tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
