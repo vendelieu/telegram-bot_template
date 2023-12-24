@@ -1,8 +1,9 @@
-val jvmTargetVersion = JavaVersion.VERSION_11
+val jvmTargetVersion = JavaVersion.VERSION_17
 
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
+    id("com.google.devtools.ksp") version "1.9.21-1.0.16"
 }
 
 group = "com.example.conversation"
@@ -17,11 +18,13 @@ repositories {
 
 dependencies {
     implementation(libs.tg.bot)
+    ksp(libs.tg.ksp)
 }
 
 tasks {
     compileJava {
         targetCompatibility = jvmTargetVersion.majorVersion
+        sourceCompatibility = jvmTargetVersion.majorVersion
     }
     compileKotlin {
         kotlinOptions {
