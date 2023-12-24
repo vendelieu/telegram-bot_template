@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val javaTarget = JavaVersion.VERSION_11
+val javaTarget = JavaVersion.VERSION_17
 
 plugins {
     alias(libs.plugins.spring.boot)
@@ -31,6 +31,7 @@ dependencies {
 tasks {
     compileJava {
         targetCompatibility = javaTarget.majorVersion
+        sourceCompatibility = javaTarget.majorVersion
     }
 
     withType<Test> {
