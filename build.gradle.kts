@@ -13,6 +13,7 @@ application {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
