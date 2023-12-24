@@ -3,7 +3,7 @@ val jvmTargetVersion = JavaVersion.VERSION_17
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
-    id("com.google.devtools.ksp") version "1.9.21-1.0.16"
+    alias(libs.plugins.ksp)
 }
 
 group = "com.example.conversation"
