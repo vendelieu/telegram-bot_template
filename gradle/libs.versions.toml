@@ -1,11 +1,14 @@
 [versions]
 tg-bot = "3.5.0"
+ksp = "1.9.21-1.0.16"
 ktor = "2.2.4"
 
 kotlin = "1.9.22"
 
 [libraries]
 tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
+tg-ksp = { module = "eu.vendeli:ksp", version.ref = "tg-bot" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

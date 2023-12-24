@@ -4,6 +4,7 @@ val jvmTargetVersion = JavaVersion.VERSION_17
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ksp)
 }
 
 group = "com.example.heroku"
@@ -23,6 +24,7 @@ repositories {
 
 dependencies {
     implementation(libs.tg.bot)
+    ksp(libs.tg.ksp)
 
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
