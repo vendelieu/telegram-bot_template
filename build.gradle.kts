@@ -3,6 +3,7 @@ val jvmTargetVersion = JavaVersion.VERSION_11
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ksp)
 }
 
 group = "com.example.poll"
@@ -17,6 +18,7 @@ repositories {
 
 dependencies {
     implementation(libs.tg.bot)
+    ksp(libs.tg.ksp)
 }
 
 tasks {
