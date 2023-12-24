@@ -4,6 +4,7 @@ val ktorVer = libs.versions.ktor.get()
 plugins {
     application
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ksp)
 }
 
 group = "com.example.ktorwebhook"
@@ -22,6 +23,7 @@ repositories {
 dependencies {
     implementation(libs.tg.bot)
     implementation(libs.logback)
+    ksp(libs.tg.ksp)
 
     implementation("io.ktor:ktor-server-core-jvm:$ktorVer")
     implementation("io.ktor:ktor-server-netty-jvm:$ktorVer")
