@@ -11,7 +11,7 @@ fun main() = runBlocking {
 
     launch(Dispatchers.Unconfined) {
         for (e in bot.update.caughtExceptions) {
-            ExceptionHandler.handleException(e.second, e.first)
+            ExceptionHandler.handleException(e.update, e.exception)
             delay(100)
         }
     }
