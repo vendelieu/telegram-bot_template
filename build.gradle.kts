@@ -30,6 +30,10 @@ dependencies {
     }
 }
 
+kotlin {
+    jvmToolchain(javaTarget.majorVersion.toInt())
+}
+
 tasks {
     compileJava {
         targetCompatibility = javaTarget.majorVersion
