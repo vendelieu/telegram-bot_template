@@ -1,7 +1,8 @@
 [versions]
-tg-bot = "4.1.0"
+tg-bot = "4.2.0"
 ksp = "1.9.22-1.0.16"
 coroutines = "1.7.3"
+logback = "1.4.14"
 
 kotlin = "1.9.22"
 
@@ -9,6 +10,7 @@ kotlin = "1.9.22"
 tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
 tg-ksp = { module = "eu.vendeli:ksp", version.ref = "tg-bot" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

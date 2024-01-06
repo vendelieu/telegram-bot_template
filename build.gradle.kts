@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.logback.classic)
     implementation(libs.coroutines.core)
     implementation(libs.tg.bot)
     ksp(libs.tg.ksp)
