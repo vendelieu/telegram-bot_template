@@ -1,8 +1,8 @@
 [versions]
-tg-bot = "4.2.1"
-spring-boot = "3.2.1"
+tg-bot = "4.3.0"
+spring-boot = "3.2.2"
 spring-dependency-management = "1.1.4"
-ksp = "1.9.22-1.0.16"
+ksp = "1.9.22-1.0.17"
 
 kotlin = "1.9.22"
 
