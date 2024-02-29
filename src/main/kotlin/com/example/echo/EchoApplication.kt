@@ -8,7 +8,7 @@ suspend fun main() {
 
     bot.handleUpdates {
         onMessage {
-            message(data.text ?: "").send(data.from?.id ?: 0, bot)
+            message(update.text).send(update.user, bot)
         }
     }
 }
