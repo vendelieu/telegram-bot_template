@@ -2,7 +2,7 @@
 tg-bot = "5.0.0"
 ksp = "1.9.22-1.0.18"
 coroutines = "1.8.0"
-logback = "1.5.1"
+logback = "1.5.2"
 
 kotlin = "1.9.22"
 
