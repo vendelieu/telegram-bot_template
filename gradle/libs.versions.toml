@@ -4,7 +4,7 @@ spring-boot = "3.2.3"
 spring-dependency-management = "1.1.4"
 ksp = "1.9.22-1.0.18"
 
-kotlin = "1.9.22"
+kotlin = "1.9.23"
 
 [libraries]
 tg-bot = { module = "eu.vendeli:telegram-bot", version.ref = "tg-bot" }
