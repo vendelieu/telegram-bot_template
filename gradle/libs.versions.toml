@@ -1,5 +1,5 @@
 [versions]
-tg-bot = "5.1.0"
+tg-bot = "5.2.0"
 spring-boot = "3.2.4"
 spring-dependency-management = "1.1.4"
 ksp = "1.9.23-1.0.20"
