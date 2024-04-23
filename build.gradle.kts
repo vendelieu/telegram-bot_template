@@ -24,6 +24,7 @@ dependencies {
 
     implementation(libs.tg.bot)
     ksp(libs.tg.ksp)
+    implementation(libs.tg.spring.starter)
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
@@ -47,7 +48,6 @@ tasks {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
             jvmTarget = javaTarget.majorVersion
-            javaParameters = true
         }
     }
 }

@@ -1,0 +1,4 @@
+ktgram:
+  bot:
+    - token: TOKEN
+#    - token: ANOTHER_TOKEN
