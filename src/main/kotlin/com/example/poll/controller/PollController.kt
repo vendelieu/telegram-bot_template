@@ -13,10 +13,12 @@ class PollController {
         message { "Hello!" }.send(user, bot)
 
         poll("Zebra white with black stripes or black with white stripes") {
-            arrayOf(
-                "white with black stripes",
-                "black with with white stripes",
-            )
+            option {
+                "white with black stripes"
+            }
+            option {
+                "black with with white stripes"
+            }
         }.options {
             type = PollType.Quiz
             correctOptionId = 1
@@ -29,7 +31,10 @@ class PollController {
 
     @CommandHandler(["morePolls"])
     suspend fun anotherPoll(user: User, bot: TelegramBot) {
-        poll("What color is the dress?", "Blue-black", "White-gold").options {
+        poll("What color is the dress?") {
+            option { "Blue-black" }
+            option { "White-gold" }
+        }.options {
             allowsMultipleAnswers = true
             isClosed = true
             explanation = "Who gave this man a time machine?"
