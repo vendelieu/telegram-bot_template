@@ -29,7 +29,7 @@ class PollController {
         }.send(user.id, bot)
     }
 
-    @CommandHandler(["morePolls"])
+    @CommandHandler.CallbackQuery(["morePolls"])
     suspend fun anotherPoll(user: User, bot: TelegramBot) {
         poll("What color is the dress?") {
             option { "Blue-black" }
