@@ -2,7 +2,7 @@
 spring-boot = "3.3.0"
 spring-dependency-management = "1.1.5"
 tg-bot = "6.0.0"
-ksp = "2.0.0-1.0.21"
+ksp = "2.0.0-1.0.22"
 
 kotlin = "2.0.0"
 
