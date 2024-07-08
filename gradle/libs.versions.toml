@@ -1,6 +1,6 @@
 [versions]
 ktor = "2.2.4"
-tg-bot = "6.2.0"
+tg-bot = "6.3.0"
 ksp = "2.0.0-1.0.22"
 
 kotlin = "2.0.0"
