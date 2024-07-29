@@ -13,12 +13,8 @@ class PollController {
         message { "Hello!" }.send(user, bot)
 
         poll("Zebra white with black stripes or black with white stripes") {
-            option {
-                "white with black stripes"
-            }
-            option {
-                "black with with white stripes"
-            }
+            option { "white with black stripes" }
+            option { "black with with white stripes" }
         }.options {
             type = PollType.Quiz
             correctOptionId = 1

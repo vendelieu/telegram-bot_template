@@ -9,7 +9,7 @@ suspend fun main() {
         handle(it)
         handle(it) {
             onPollAnswer {
-                println("User#${update.user.id} chose ${update.pollAnswer.optionIds}")
+                println("User#${update.user?.id} chose ${update.pollAnswer.optionIds}")
             }
         }
     }
