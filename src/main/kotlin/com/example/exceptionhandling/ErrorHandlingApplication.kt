@@ -7,8 +7,8 @@ import kotlinx.coroutines.runBlocking
 fun main() = runBlocking {
     val bot = TelegramBot("BOT_TOKEN")
 
-    bot.update.runExceptionHandler {
-        ExceptionHandler.handleException(update, exception)
+    bot.update.runExceptionHandler { e, upd ->
+        ExceptionHandler.handleException(upd, e)
     }
     bot.handleUpdates()
 }
