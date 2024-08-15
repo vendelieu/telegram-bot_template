@@ -3,6 +3,7 @@ package com.example.conversation.controller
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.annotations.InputChain
 import eu.vendeli.tgbot.api.message.message
+import eu.vendeli.tgbot.generated.userData
 import eu.vendeli.tgbot.types.User
 import eu.vendeli.tgbot.types.internal.BreakCondition
 import eu.vendeli.tgbot.types.internal.ChainLink
