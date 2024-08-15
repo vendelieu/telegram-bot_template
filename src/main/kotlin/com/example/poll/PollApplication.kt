@@ -3,7 +3,7 @@ package com.example.poll
 import eu.vendeli.tgbot.TelegramBot
 
 suspend fun main() {
-    val bot = TelegramBot("BOT_TOKEN", "com.example.poll.controller")
+    val bot = TelegramBot("BOT_TOKEN")
 
     bot.update.setListener {
         handle(it)
