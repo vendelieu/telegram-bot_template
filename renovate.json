@@ -10,7 +10,6 @@
     "exception-handling",
     "poll",
     "heroku",
-    "ktor-webhook",
     "spring-bot"
   ],
   "automergeType": "branch",
