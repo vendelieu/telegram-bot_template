@@ -25,7 +25,7 @@ dependencies {
 
 kotlin {
     compilerOptions {
-        jvmTarget = JvmTarget.valueOf(jvmTargetVersion.majorVersion)
+        jvmTarget = JvmTarget.fromTarget(jvmTargetVersion.majorVersion)
     }
     jvmToolchain(jvmTargetVersion.majorVersion.toInt())
 }
