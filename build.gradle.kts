@@ -1,4 +1,6 @@
-val jvmTargetVersion = JavaVersion.VERSION_11
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+val jvmTargetVersion = JavaVersion.VERSION_17
 
 plugins {
     application
@@ -23,14 +25,9 @@ dependencies {
     ksp(libs.tg.ksp)
 }
 
-tasks {
-    compileJava {
-        targetCompatibility = jvmTargetVersion.majorVersion
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.valueOf(jvmTargetVersion.majorVersion)
     }
-    compileKotlin {
-        kotlinOptions {
-            jvmTarget = jvmTargetVersion.majorVersion
-            javaParameters = true
-        }
-    }
+    jvmToolchain(jvmTargetVersion.majorVersion.toInt())
 }
