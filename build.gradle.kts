@@ -6,6 +6,7 @@ plugins {
     application
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.telegram.bot)
 }
 
 group = "com.example.conversation"
@@ -19,8 +20,7 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.tg.bot)
-    ksp(libs.tg.ksp)
+    // ...
 }
 
 kotlin {
