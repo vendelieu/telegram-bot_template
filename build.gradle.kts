@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.spring)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.telegram.bot)
 }
 
 group = "com.example.springbot"
@@ -23,8 +24,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
-    implementation(libs.tg.bot)
-    ksp(libs.tg.ksp)
     implementation(libs.tg.spring.starter)
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
