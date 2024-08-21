@@ -6,6 +6,7 @@ plugins {
     application
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.telegram.bot)
 }
 
 group = "eu.vendeli.samples"
@@ -20,9 +21,6 @@ repositories {
 
 dependencies {
     implementation(libs.logback.classic)
-    implementation(libs.coroutines.core)
-    implementation(libs.tg.bot)
-    ksp(libs.tg.ksp)
 }
 
 kotlin {
