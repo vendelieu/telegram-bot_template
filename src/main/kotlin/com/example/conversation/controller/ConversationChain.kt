@@ -21,9 +21,7 @@ object ConversationChain {
         }
 
         override suspend fun action(user: User, update: ProcessedUpdate, bot: TelegramBot): String {
-            message { "Oh, ${update.text}, nice to meet you!" }.inlineKeyboardMarkup {
-
-            }
+            message { "Oh, ${update.text}, hey there" }.send(user, bot)
             message { "How old are you?" }.send(user, bot)
 
             return update.text
