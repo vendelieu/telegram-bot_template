@@ -3,7 +3,7 @@ logback = "1.5.7"
 tg-bot = "7.2.2"
 ksp = "2.0.10-1.0.24"
 
-kotlin = "2.0.10"
+kotlin = "2.0.20"
 
 [libraries]
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
