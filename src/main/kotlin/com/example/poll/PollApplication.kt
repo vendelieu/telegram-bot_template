@@ -1,6 +1,7 @@
 package com.example.poll
 
 import eu.vendeli.tgbot.TelegramBot
+import eu.vendeli.tgbot.utils.onPollAnswer
 
 suspend fun main() {
     val bot = TelegramBot("BOT_TOKEN")
