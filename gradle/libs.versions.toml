@@ -4,7 +4,7 @@ spring-dependency-management = "1.1.7"
 tg-bot = "7.8.0"
 ksp = "2.1.0-1.0.29"
 
-kotlin = "2.1.0"
+kotlin = "2.1.10"
 
 [libraries]
 tg-spring-starter = { module = "eu.vendeli:spring-ktgram-starter", version.ref = "tg-bot" }
