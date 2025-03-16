@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val javaTarget = JavaVersion.VERSION_17
@@ -45,9 +46,9 @@ tasks {
         useJUnitPlatform()
     }
     withType<KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = javaTarget.majorVersion
+        compilerOptions {
+            freeCompilerArgs.set(listOf("-Xjsr305=strict"))
+            jvmTarget.set(JvmTarget.fromTarget(javaTarget.majorVersion))
         }
     }
 }
