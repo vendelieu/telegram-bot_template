@@ -2,8 +2,8 @@ package com.example.poll.controller
 
 import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.annotations.CommandHandler
+import eu.vendeli.tgbot.api.common.poll
 import eu.vendeli.tgbot.api.message.message
-import eu.vendeli.tgbot.api.poll
 import eu.vendeli.tgbot.types.User
 import eu.vendeli.tgbot.types.poll.PollType
 
