@@ -5,10 +5,10 @@ import eu.vendeli.tgbot.annotations.InputChain
 import eu.vendeli.tgbot.api.message.message
 import eu.vendeli.tgbot.generated.getAllState
 import eu.vendeli.tgbot.types.User
-import eu.vendeli.tgbot.types.internal.BreakCondition
-import eu.vendeli.tgbot.types.internal.ChainLink
-import eu.vendeli.tgbot.types.internal.ProcessedUpdate
-import eu.vendeli.tgbot.types.internal.chain.BaseStatefulLink
+import eu.vendeli.tgbot.types.chain.BaseStatefulLink
+import eu.vendeli.tgbot.types.chain.BreakCondition
+import eu.vendeli.tgbot.types.chain.ChainLink
+import eu.vendeli.tgbot.types.component.ProcessedUpdate
 
 @InputChain
 object ConversationChain {

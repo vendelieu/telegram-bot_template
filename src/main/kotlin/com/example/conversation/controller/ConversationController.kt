@@ -4,7 +4,7 @@ import eu.vendeli.tgbot.TelegramBot
 import eu.vendeli.tgbot.annotations.CommandHandler
 import eu.vendeli.tgbot.api.message.message
 import eu.vendeli.tgbot.types.User
-import eu.vendeli.tgbot.utils.setChain
+import eu.vendeli.tgbot.utils.common.setChain
 
 class ConversationController {
     @CommandHandler(["/start"])
