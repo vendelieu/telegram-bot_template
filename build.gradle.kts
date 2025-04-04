@@ -36,6 +36,20 @@ kotlin {
     jvmToolchain(javaTarget.majorVersion.toInt())
 }
 
+configurations.all {
+    resolutionStrategy.eachDependency {
+        val serdeVer = "1.8.1"
+        when(requested.module.toString()) {
+            // json serialiazaton
+            "org.jetbrains.kotlinx:kotlinx-serialization-json" -> useVersion(serdeVer)
+            "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm" -> useVersion(serdeVer)
+            "org.jetbrains.kotlinx:kotlinx-serialization-core" -> useVersion(serdeVer)
+            "org.jetbrains.kotlinx:kotlinx-serialization-core-jvm" -> useVersion(serdeVer)
+            "org.jetbrains.kotlinx:kotlinx-serialization-bom" -> useVersion(serdeVer)
+        }
+    }
+}
+
 tasks {
     compileJava {
         targetCompatibility = javaTarget.majorVersion
