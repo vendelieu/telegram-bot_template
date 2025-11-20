@@ -1,8 +1,8 @@
 [versions]
-tg-bot = "8.2.0"
-ksp = "2.2.10-2.0.2"
+tg-bot = "8.4.1"
+ksp = "2.3.3"
 
-kotlin = "2.2.10"
+kotlin = "2.2.21"
 
 [libraries]
 
