@@ -1,9 +1,9 @@
 {
   "extends": [
-    "config:base",
+    "config:recommended",
     ":automergeMinor"
   ],
-  "baseBranches": [
+  "baseBranchPatterns": [
     "master",
     "conversation",
     "echo",
@@ -14,15 +14,15 @@
   "automergeType": "branch",
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "minor",
         "patch"
       ],
       "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": [
+        "*"
+      ]
     }
   ]
 }
