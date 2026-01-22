@@ -17,7 +17,6 @@ class PollController {
             option { "black with with white stripes" }
         }.options {
             type = PollType.Quiz
-            correctOptionId = 1
         }.send(user, bot)
 
         message { "Want more polls?" }.inlineKeyboardMarkup {
