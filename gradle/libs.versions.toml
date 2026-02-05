@@ -2,7 +2,7 @@
 tg-bot = "9.1.1"
 ksp = "2.3.5"
 
-kotlin = "2.3.0"
+kotlin = "2.3.10"
 
 [libraries]
 # ...
