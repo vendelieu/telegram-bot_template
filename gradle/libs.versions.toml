@@ -1,7 +1,7 @@
 [versions]
 spring-boot = "4.0.2"
 spring-dependency-management = "1.1.7"
-tg-bot = "9.1.1"
+tg-bot = "9.2.0"
 ksp = "2.3.5"
 
 kotlin = "2.3.10"
