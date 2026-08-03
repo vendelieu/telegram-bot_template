@@ -1,6 +1,6 @@
 [versions]
 tg-bot = "9.6.0"
-ksp = "2.3.10"
+ksp = "2.3.11"
 
 kotlin = "2.4.10"
 
