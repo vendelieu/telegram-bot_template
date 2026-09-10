@@ -1,8 +1,8 @@
 [versions]
-tg-bot = "9.1.0"
-ksp = "2.3.4"
+tg-bot = "9.6.0"
+ksp = "2.3.12"
 
-kotlin = "2.3.0"
+kotlin = "2.4.20"
 
 [plugins]
 telegram-bot = { id = "eu.vendeli.telegram-bot", version.ref = "tg-bot" }
